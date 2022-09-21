@@ -1,0 +1,25 @@
+<!-- <p>admin-list works!</p> -->
+<h2> Admin List</h2>
+    <table class = "table table-striped" >
+        <thead>
+            <tr >
+                <!-- <th> Id </th> -->
+                <th> Name </th>
+                <th> Password </th> 
+                <th> Actions</th>
+            
+            </tr>
+            <tbody>
+                <tr *ngFor = "let admin of admins" >
+                <!-- <td> {{ admin.id}} </td> -->
+                <td> {{ admin.name }} </td>
+                <td><input type="password" class="form-control" placeholder="Password" required > {{ admin.password}} </td>
+                
+                <td>
+                    <button (click) = "updateAdmin(admin.id)" class = "btn btn-info"> Update</button>
+                    <button (click) = "deleteAdmin(admin.id)" class = "btn btn-info" style="margin-left: 10px"> Delete</button>
+                    <button (click) = "adminDetails(admin.id)" class = "btn btn-info" style="margin-left: 10px"> View</button>
+                </td>
+
+            </tr>
+            </tbody>
